@@ -1,0 +1,5 @@
+[cicd]
+10.0.0.4 private_key=../vagrant/.vagrant/machines/cicd/virtualbox/private_key
+
+[server]
+10.0.0.5 private_key=../vagrant/.vagrant/machines/server/virtualbox/private_key
