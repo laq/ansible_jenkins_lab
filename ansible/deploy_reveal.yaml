@@ -1,0 +1,25 @@
+
+- hosts: server
+  become: yes
+  tasks:
+
+    - name: Ensure there is nothing
+      file: 
+        path: '/var/www/master' 
+        state: absent        
+
+    - name: Download binary to deploy      
+      get_url:
+        url: https://github.com/hakimel/reveal.js/archive/master.zip
+        dest: /var/www/master.zip
+
+    - name: Unzip binary
+      unarchive:
+        src: /var/www/master.zip
+        dest: /var/www/
+        remote_src : yes
+
+    - name: Ensure zip is gone
+      file: 
+        path: '/var/www/master.zip' 
+        state: absent
