@@ -5,21 +5,29 @@
 
     - name: Ensure there is nothing
       file: 
-        path: '/var/www/master' 
-        state: absent        
+        path: '/var/www/html' 
+        state: absent
+
+    - name: Ensure html folder exists
+      file: 
+        path: '/var/www/html' 
+        state: directory  
 
     - name: Download binary to deploy      
       get_url:
         url: https://github.com/hakimel/reveal.js/archive/master.zip
-        dest: /var/www/master.zip
+        dest: /tmp/master.zip
 
     - name: Unzip binary
       unarchive:
-        src: /var/www/master.zip
-        dest: /var/www/
+        src: /tmp/master.zip
+        dest: /var/www/html
         remote_src : yes
+
+    - name: Rename folder
+      command: mv /var/www/html/reveal.js-master /var/www/html/master
 
     - name: Ensure zip is gone
       file: 
-        path: '/var/www/master.zip' 
+        path: '/tmp/master.zip' 
         state: absent
