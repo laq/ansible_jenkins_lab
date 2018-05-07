@@ -1,0 +1,12 @@
+.pie {
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  background: yellowgreen;
+  background-image:linear-gradient(to right, transparent 50%, #655 0);
+  text-align: center;
+  display: float;
+}
+
+.reveal .white-font {
+  color: #fff; 
+}

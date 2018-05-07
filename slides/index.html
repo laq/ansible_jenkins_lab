@@ -1,0 +1,317 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>S4N</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/seven.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="custom/css/cssimages.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div id="left"></div>
+		<div id="right"></div>
+		<div id="top"></div>
+		<div id="bottom"></div>
+		<div class="reveal">
+			<div class="slides">
+
+                <section data-background="url('images/logo_esquina_intro_end.svg'), linear-gradient(to right, #443548, #b71930, #e94635)" data-background-position="right bottom" data-background-repeat="no-repeat">
+					<img class="no-border" width="5%" src="images/rombo.svg" />
+					<img class="no-border" width="7%" src="images/s4n.svg" />
+					<h2 class="white-font"><b>Automatización con Ansible y Jenkins</b></h2>
+				</section>
+
+				<section data-background="url('images/logo_esquina.svg')" data-background-position="right bottom" data-background-repeat="no-repeat">
+					<img style="float: left" class="no-border"  width="10%" src="images/rombo.svg" />
+					<h3>Contenido</h3>
+				</section>
+
+                <section data-background="url('images/logo_esquina.svg')" data-background-position="right bottom" data-background-repeat="no-repeat">
+                    <section>
+                        <img style="float: left" class="no-border"  width="7%" src="images/rombo.svg" />
+                        <h3 style="float: left">Presentadores</h3>
+                    </section>
+                    <section>
+                        <h3>David Montaño</h3>
+                        <p><ul>
+                        <li>Linux fan</li>
+                        <li>Share Knowledge!</li>
+                        <li>*New message from David Montaño: We should learn Pony*</li>
+                    </ul></p>
+                        <img class="no-border" src="images/us/info-david.png" width="25%" />
+                    </section>
+                    <section>
+                        <h3>Leonardo Quiñonez</h3>
+                        <p><ul>
+                        <li>Learn learn learn</li>
+                        <li>Ops Expertise and hidden Iron Man </li>
+                        <li>Maybe we have to think about Ops from the beginning</li>
+                    </ul></p>
+                        <img class="no-border" src="images/us/info-leonardo.png" width="25%" />
+                    </section>
+                    <section>
+                        <h3>Natalia Parrado</h3>
+                        <p><ul>
+                        <li>"But but...can I bash-it?"</li>
+                        <li>I need another alias</li>
+                        <li>Kittens!!!</li>
+                    </ul></p>
+                        <img class="no-border" src="images/us/info-natalia.jpg" width="25%" />
+                    </section>
+                </section>
+                
+				<section data-background="url('images/logo_esquina.svg')" data-background-position="right bottom" data-background-repeat="no-repeat">
+					<section>
+					<img style="float: left" class="no-border"  class="no-border"  width="7%" src="images/rombo.svg" />
+					<h3 style="float: left">Introducción</h3>
+					</section>
+
+					<section>
+						<p>Desarrollo Ágil</p>
+						<p>Antipatrones de Manejo de Software (CD)</p>
+						<p>Integración Contínua - Despliegue Continuo - Entrega Contínua (CD)</p>
+						<p>Flujo de Valor (DH value stream)</p>
+						<p>SRE (Google SRE)</p>
+					</section>
+					<section>
+						<h3 style="float: left">Desarrollo Ágil</h3>
+						<p></p>
+						<p class="fragment">"lksdjhgkjdsfhgjkhdfskjghdskfjhg</p>
+						<aside class="notes">
+							20 Minutos
+						</aside>
+					</section>
+					<section>
+						<h3 style="float: left">Antipatrones de Manejo de Software (CD)</h3>
+					</section>
+					<section>
+						<h3 style="float: left">CI/CD/CD</h3>
+						<img src="images/ci_cd_cd.png" width="80%" />
+					</section>
+					<section>
+						<h3 style="float: left">Flujo de Valor</h3>
+						<img src="images/value-stream.png" />
+					</section>
+					<section>
+						<h3 style="float: left">SRE - Site Reliability Engineering</h3>
+						<p class="fragment">"SRE is what you get when you treat operations as if it’s a software problem"Google SRE</p>
+						<aside class="notes">
+							20 Minutos
+						</aside>
+					</section>
+					<section data-background="#b5533c" class="white-font">
+						<h4 class="white-font">Aproximación normal</h4>
+						<p>Sysops</p>
+						<p>Development Team vs Operations Team</p>
+						<blockquote>
+						&ldquo;Queremos desplegar lo que sea, cuando sea, sin impedimentos&rdquo;
+						</blockquote>
+						VS
+						<blockquote>
+						&ldquo;No queremos cambiar nada una vez este funcionando el sistema&rdquo;
+						</blockquote>
+
+					</section>
+					<section data-background="#b5533c" class="white-font">
+						<h4 class="white-font">Aproximación normal</h4>
+
+						<p class="fragment">Un equipo tradicional de operaciones escala linealmente con el tamaño del servicio.</p>
+
+						<p class="fragment">Lo que implica contratar más personas para hacer las mismas tareas una y otra vez.</p>
+						
+						<p class="fragment">La intervencion manual para cambios y manejo de eventos se vuelve más costosa a medida que crece el servicio.</p>
+						
+						
+					</section>
+					<section data-background="#4d7e65" class="white-font">
+						<h4 class="white-font">Aproximación SRE</h4>
+
+						<p>Busca que:</p>
+						<p>50% Dev <div class="pie"></div> 50% Ops </p>
+						
+
+						<p class="fragment">Alta dependencia de automatización vs esfuerzo humano.</p>
+						
+						<p class="fragment">
+							Estos equipos escalan de manera sublineal con el tamaño del servicio.
+						</p>
+ 					</section>
+					<section>
+						Se puede ver a SRE como una implementación especifica de DevOps con algunas extensiones						
+					</section>
+					<section>
+						<h4>Principios SRE</h4>
+						<ul>
+							<li class="fragment current-visible">Enfoque constante en Ingenieria
+								<p>Blame-free postmortem culture</p>
+								<p>Ops 50% Eng 50%</p>
+							</li>
+							<li class="fragment current-visible">Busqueda de velocidad de cambio sin violar el SLO</li>
+							<li class="fragment current-visible">Monitoreo</li>
+							<li class="fragment current-visible">Respuesta a Emergencias</li>
+							<li class="fragment current-visible">Manejo de Cambios</li>
+							<li class="fragment current-visible">Prevision de demanda y capacidad</li>
+							<li class="fragment current-visible">Aprovisionamiento</li>
+							<li class="fragment current-visible">Efficiencia y Performance</li>
+						</ul>
+					</section>
+					<section>
+						Tenets of SRE:
+						Ensuring a Durable Focus on Engineering
+							Blame-free postmortem culture
+							Ops 50% Eng 50%
+
+						Pursuing Maximum Change Velocity Without Violating a Service’s SLO
+							100% wrong reliability target
+							Error Budget, spend to get velocity
+						Monitoring
+							Health y availability
+							A system that requires a human to read an email and decide whether or not some type of action needs to be taken in response is fundamentally flawed
+							Instead, software should do the interpreting, and humans should be notified only when they need to take action.
+						Emergency Response
+							Mean time to failure (MTTF)
+							Mean time to repair (MTTR)
+
+							Humans add latency
+
+							Recording best practices ahead of time in a playbook produces 3x imporvement in MTTR
+						Change Management
+							Progressive Rollouts
+							Quickly and accurately detecting problems
+							Rollback changes safely
+
+						Demand Forecasting and Capacity Planning
+
+						Provisioning
+
+						Efficiency and Performance
+
+					</section>
+
+				</section>
+
+				<section data-background="url('images/logo_esquina.svg')" data-background-position="right bottom" data-background-repeat="no-repeat">					
+					
+					<section>
+					<img style="float: left" class="no-border"  width="7%" src="images/rombo.svg" />
+					<h3 style="float: left">Principios de Devops</h3>
+					</section>
+				
+					<section>
+						<p>CAMS (DH)</p>
+						<p>Pipeline de Software (CD)</p>
+						<p>Retroalimentación (CD)</p>
+						<p>Aprendizaje Contínuo y Experimentación (CD, DH)</p>
+						<p>Arquitectura de Sistemas (Release It)</p>
+						<p>Ganado vs Mascotas | Servidores fenix vs Copo de nieve</p>
+					</section>
+				</section>
+
+				<section data-background="url('images/logo_esquina.svg')" data-background-position="right bottom" data-background-repeat="no-repeat">
+					
+					<section>
+						<img style="float: left" class="no-border"  width="7%" src="images/rombo.svg" />
+						<h3 style="float: left">Dimensiones del Software y su Administración</h3>
+					</section>
+				
+					<section>						
+						<p>Dimensiones</p>
+						<p>Administración de Codigo </p>
+						<p>Administración de Datos</p>
+						<p>Administración de Configuracion</p>
+						<p>Administración de Infraestructura</p>
+					</section>
+				</section>
+
+				<section data-background="url('images/logo_esquina.svg')" data-background-position="right bottom" data-background-repeat="no-repeat">
+					
+					<section>
+						<img style="float: left" class="no-border"  width="7%" src="images/rombo.svg" />
+						<h3 style="float: left">Integracion Continua y Entrega Continua</h3>
+					</section>
+
+				
+					<section>
+						<p>Integración Contínua </p>
+						<p>Pipeline de Software</p>
+						<p>Manejo del proceso de despliegue</p>						
+					</section>
+				</section>
+
+				<section data-background="url('images/logo_esquina.svg')" data-background-position="right bottom" data-background-repeat="no-repeat">
+					
+					<section>
+						<img style="float: left" class="no-border"  width="7%" src="images/rombo.svg" />
+						<h3 style="float: left">Mejora continua y operación</h3>					
+					</section>
+				
+					<section>
+						<p>Monitoreo</p>
+						<p>Retroalimentación</p>
+						<p>Aprendizaje Contínuo y Experimentación</p>
+						<p>Seguridad Informatica</p>
+					</section>
+					<section>
+						<h3>Monitoreo</h3>						
+					</section>
+					<section>
+						<ul>
+							<li>Alerts</li>
+							<li>Tickets</li>
+							<li>Logging</li>
+						</ul>
+					</section>
+				</section>
+
+				<section data-background="url('images/logo_esquina_intro_end.svg'), linear-gradient(to right, #443548, #b71930, #e94635)" data-background-position="right bottom" data-background-repeat="no-repeat">
+					<h1 class="white-font">End</h1>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				defaultTiming: 120,
+				zoomKey: 'shift',
+				multiplex: {
+					// Example values. To generate your own, see the socket.io server instructions.
+					secret: '15173156059638405765', // Obtained from the socket.io server. Gives this (the master) control of the presentation
+					id: 'f01ffe0db2f20583', // Obtained from socket.io server
+					url: 'http://192.168.6.50:1948' // Location of socket.io server
+				},
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '//cdn.socket.io/socket.io-1.3.5.js', async: true },
+					{ src: 'plugin/multiplex/master.js', async: true },
+					{ src: 'plugin/notes-server/client.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
