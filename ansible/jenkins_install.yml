@@ -2,7 +2,7 @@
 - hosts: cicd
   tasks:
 
-  - name: Ensure Java is installed.
+  - name: Ensure Java is installed
     become: yes
     apt: pkg=openjdk-8-jdk state=present
 
@@ -10,20 +10,23 @@
     alternatives: 
       name: java 
       path: /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
-
   - name: Add Jenkins apt repository key.
     become: yes
     apt_key:
       url: "http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key"
       state: present
 
-  - name: Add Jenkins apt repository.
+  - name: Add Jenkins apt repository
     become: yes
     apt_repository:
       repo: "deb http://pkg.jenkins-ci.org/debian binary/"
       state: present
       update_cache: yes
 
-  - name: Ensure Jenkins is installed.
+  - name: Ensure Jenkins is installed
     become: yes
     apt: pkg=jenkins state=present
+
+  - name: Install ansible
+    become: yes
+    apt: pkg=ansible state=present
