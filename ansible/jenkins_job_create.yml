@@ -1,0 +1,32 @@
+- hosts: cicd
+  vars:
+    jenkins_user: <change>
+    jenkins_password: <change>
+    jenkins_url: http://10.0.0.4:8080
+  tasks:
+
+  - name: Install plugin
+    jenkins_plugin:
+      name: build-pipeline-plugin
+      url: "{{jenkins_url}}"
+      url_username: "{{jenkins_user}}"
+      url_password: "{{jenkins_password}}"
+
+  - name: Ensure python-jenkins is installed
+    pip:
+      name: python-jenkins
+
+  - name: Ensure python-jenkins is installed
+    pip:
+      name: lxml
+
+  - name: Ensure Jenkins job is created    
+    jenkins_job:
+      name: deploy
+      url: "{{jenkins_url}}"
+      user: "{{jenkins_user}}"
+      password: "{{jenkins_password}}"
+      config: "{{ lookup('file', 'templates/deploy.xml') }}"
+
+
+

@@ -30,3 +30,7 @@
   - name: Install ansible
     become: yes
     apt: pkg=ansible state=present
+
+  - name: Install pip
+    become: yes
+    apt: pkg=python-pip state=present
