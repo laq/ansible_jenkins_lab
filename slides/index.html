@@ -36,6 +36,7 @@
 					<h2 class="white-font"><b>Automatización con Ansible y Jenkins</b></h2>
 				</section>
 
+                <!--Presentadores-->
                 <section data-background="url('images/logo_esquina.svg')" data-background-position="right bottom" data-background-repeat="no-repeat">
                     <section>
                         <img style="float: left" class="no-border"  width="7%" src="images/rombo.svg" />
@@ -70,6 +71,7 @@
                     </section>
                 </section>
 
+                <!--Contenido-->
                 <section data-background="url('images/logo_esquina.svg')" data-background-position="right bottom" data-background-repeat="no-repeat">
                     <section>
                         <img style="float: left" class="no-border"  width="7%" src="images/rombo.svg" />
@@ -79,13 +81,14 @@
                         <h3>De qué hablaremos?</h3>
                         <p><ul>
                         <li>Continuous Delivery</li>
-                        <li>Code Pipelines</li>
+                        <li>Deployment Pipelines</li>
                         <li>Jenkins</li>
                         <li>Ansible</li>
                     </ul></p>
                 </section>
                 </section>
 
+                <!--Continuous Delivery-->
                 <section data-background="url('images/logo_esquina.svg')" data-background-position="right bottom" data-background-repeat="no-repeat">
                     <section>
                         <img style="float: left" class="no-border"  width="7%" src="images/rombo.svg" />
@@ -124,6 +127,7 @@
                     </section>
                 </section>
 
+                <!--Pipelines-->
                 <section data-background="url('images/logo_esquina.svg')" data-background-position="right bottom" data-background-repeat="no-repeat">
 
                     <section>
@@ -166,6 +170,7 @@
 
                 </section>
 
+                <!--Jenkins-->
                 <section data-background="url('images/logo_esquina.svg')" data-background-position="right bottom" data-background-repeat="no-repeat">
 
                     <section>
@@ -200,6 +205,8 @@
                             <li>¿Cómo deberían manejarse los backups?</li>
                             <li>¿Debería tenerse un repositorio con todos los archivos de Jenkins? 1G?</li>
                             <li>¿Si tenemos un repositorio con solamente los jobs cómo manejamos la configuración de plugins?</li>
+                            <li>¿En qué medida se ve aumentada la complejidad del sistema cuando tenemos un despliegue en clúster?</li>
+                            <li>Algunos plugins pueden usar bastante memoria RAM</li>
                         </ul>
                         <!--<img class="no-border" width="100%" src="images/jenkins/ansible-plugin.png" />-->
                         </p>
@@ -207,210 +214,127 @@
 
                 </section>
 
+                <!--Ansible-->
+                <section data-background="url('images/logo_esquina.svg')" data-background-position="right bottom" data-background-repeat="no-repeat">
+
+                    <section>
+                        <img style="float: left" class="no-border"  width="7%" src="images/rombo.svg" />
+                        <h3 style="float: left">Ansible</h3>
+                    </section>
+
+                    <section>
+                        <h3>Configuration as Code</h3>
+                        <p style="font-size: 1.0em;">
+                        <ul style="font-size: 0.7em;">
+                            <li>Configuración de servidores remotos desde un host central</li>
+                            <li>SSH y Python (no usa agentes)</li>
+                            <li>Definimos playbooks en formato YAML</li>
+                        </ul>
+                        </p>
+                        <img class="no-border" src="images/ansible/ansible-definition.png" width="70%" />
+                    </section>
+
+                    <section>
+                        <h3>Inventarios</h3>
+                        <p style="font-size: 1.0em;">
+                        <ul style="font-size: 0.7em;">
+                            <li>Nos permiten definir hosts sobre los que se ejecutan las tareas</li>
+                            <li>Podemos agrupar esos hosts en grupos</li>
+                            <li>Estáticos o dinámicos (por ejemplo cuando usamos ansible con servidores en la nube)</li>
+                        </ul>
+                        </p>
+                        <img class="no-border" src="images/ansible/ansible-inventories.png" width="60%" />
+                    </section>
+
+                    <section>
+                        <h3>Variables</h3>
+                        <p style="font-size: 1.0em;">
+                        <ul style="font-size: 0.7em;">
+                            <li>Declaradas globalmente</li>
+                            <li>Declaradas por grupo específico</li>
+                            <li>Declaradas por host</li>
+                            <li>Declaradas en playbooks</li>
+                        </ul>
+                        </p>
+                        <img class="no-border" src="images/ansible/ansible-variables.png" width="100%" />
+                    </section>
+
+                    <section>
+                        <h3>Playbooks, Roles y Tasks</h3>
+                        <p style="font-size: 1.0em;">
+                        <ul style="font-size: 0.7em;">
+                            <li>Los playbooks son archivos .yml</li>
+                            <li>Un playbook agrupa un conjunto de tareas</li>
+                            <li>Un playbook define en qué hosts se ejecutan esas tareas</li>
+                            <li>Las tareas pueden estar agrupadas en roles (reusabilidad) </li>
+                        </ul>
+                        </p>
+                        <img class="no-border" src="images/ansible/ansible-play-roles-tasks.png" width="50%" />
+                    </section>
+
+                </section>
+
+                <!--Alcance de lab-->
+
+                <section data-background="url('images/logo_esquina.svg')" data-background-position="right bottom" data-background-repeat="no-repeat">
+
+                    <section>
+                        <img style="float: left" class="no-border"  width="7%" src="images/rombo.svg" />
+                        <h3 style="float: left">Demo</h3>
+                    </section>
+
+                    <section>
+                        <h3>Qué vamos a hacer</h3>
+                        <p style="font-size: 1.0em;">
+                        <ul style="font-size: 0.7em;">
+                        <li>Configuración de blah blah blah blah</li>
+                        <li>Más blah blah blah</li>
+                        </ul>
+                        </p>
+                        <!--Deberíamos incluir una imagen de lo que esperamos que quede-->
+                    </section>
+
+                    <section>
+                        <h3>Inventarios</h3>
+                        <p style="font-size: 1.0em;">
+                        <ul style="font-size: 0.7em;">
+                        <li>Nos permiten definir hosts sobre los que se ejecutan las tareas</li>
+                        <li>Podemos agrupar esos hosts en grupos</li>
+                        <li>Estáticos o dinámicos (por ejemplo cuando usamos ansible con servidores en la nube)</li>
+                        </ul>
+                        </p>
+                        <img class="no-border" src="images/ansible/ansible-inventories.png" width="60%" />
+                    </section>
+
+                    <section>
+                        <h3>Variables</h3>
+                        <p style="font-size: 1.0em;">
+                        <ul style="font-size: 0.7em;">
+                            <li>Declaradas globalmente</li>
+                            <li>Declaradas por grupo específico</li>
+                            <li>Declaradas por host</li>
+                            <li>Declaradas en playbooks</li>
+                        </ul>
+                        </p>
+                        <img class="no-border" src="images/ansible/ansible-variables.png" width="100%" />
+                    </section>
+
+                    <section>
+                        <h3>Playbooks, Roles y Tasks</h3>
+                        <p style="font-size: 1.0em;">
+                        <ul style="font-size: 0.7em;">
+                        <li>Los playbooks son archivos .yml</li>
+                        <li>Un playbook agrupa un conjunto de tareas</li>
+                        <li>Un playbook define en qué hosts se ejecutan esas tareas</li>
+                        <li>Las tareas pueden estar agrupadas en roles (reusabilidad) </li>
+                        </ul>
+                        </p>
+                        <img class="no-border" src="images/ansible/ansible-play-roles-tasks.png" width="50%" />
+                    </section>
+
+                </section>
+
                 <!--De aqui en adelante nein-->
-				<section data-background="url('images/logo_esquina.svg')" data-background-position="right bottom" data-background-repeat="no-repeat">
-					<section>
-					<img style="float: left" class="no-border"  class="no-border"  width="7%" src="images/rombo.svg" />
-					<h3 style="float: left">Introducción</h3>
-					</section>
-
-					<section>
-						<p>Desarrollo Ágil</p>
-						<p>Antipatrones de Manejo de Software (CD)</p>
-						<p>Integración Contínua - Despliegue Continuo - Entrega Contínua (CD)</p>
-						<p>Flujo de Valor (DH value stream)</p>
-						<p>SRE (Google SRE)</p>
-					</section>
-					<section>
-						<h3 style="float: left">Desarrollo Ágil</h3>
-						<p></p>
-						<p class="fragment">"lksdjhgkjdsfhgjkhdfskjghdskfjhg</p>
-						<aside class="notes">
-							20 Minutos
-						</aside>
-					</section>
-					<section>
-						<h3 style="float: left">Antipatrones de Manejo de Software (CD)</h3>
-					</section>
-					<section>
-						<h3 style="float: left">CI/CD/CD</h3>
-						<img src="images/ci_cd_cd.png" width="80%" />
-					</section>
-					<section>
-						<h3 style="float: left">Flujo de Valor</h3>
-						<img src="images/value-stream.png" />
-					</section>
-					<section>
-						<h3 style="float: left">SRE - Site Reliability Engineering</h3>
-						<p class="fragment">"SRE is what you get when you treat operations as if it’s a software problem"Google SRE</p>
-						<aside class="notes">
-							20 Minutos
-						</aside>
-					</section>
-					<section data-background="#b5533c" class="white-font">
-						<h4 class="white-font">Aproximación normal</h4>
-						<p>Sysops</p>
-						<p>Development Team vs Operations Team</p>
-						<blockquote>
-						&ldquo;Queremos desplegar lo que sea, cuando sea, sin impedimentos&rdquo;
-						</blockquote>
-						VS
-						<blockquote>
-						&ldquo;No queremos cambiar nada una vez este funcionando el sistema&rdquo;
-						</blockquote>
-
-					</section>
-					<section data-background="#b5533c" class="white-font">
-						<h4 class="white-font">Aproximación normal</h4>
-
-						<p class="fragment">Un equipo tradicional de operaciones escala linealmente con el tamaño del servicio.</p>
-
-						<p class="fragment">Lo que implica contratar más personas para hacer las mismas tareas una y otra vez.</p>
-						
-						<p class="fragment">La intervencion manual para cambios y manejo de eventos se vuelve más costosa a medida que crece el servicio.</p>
-						
-						
-					</section>
-					<section data-background="#4d7e65" class="white-font">
-						<h4 class="white-font">Aproximación SRE</h4>
-
-						<p>Busca que:</p>
-						<p>50% Dev <div class="pie"></div> 50% Ops </p>
-						
-
-						<p class="fragment">Alta dependencia de automatización vs esfuerzo humano.</p>
-						
-						<p class="fragment">
-							Estos equipos escalan de manera sublineal con el tamaño del servicio.
-						</p>
- 					</section>
-					<section>
-						Se puede ver a SRE como una implementación especifica de DevOps con algunas extensiones						
-					</section>
-					<section>
-						<h4>Principios SRE</h4>
-						<ul>
-							<li class="fragment current-visible">Enfoque constante en Ingenieria
-								<p>Blame-free postmortem culture</p>
-								<p>Ops 50% Eng 50%</p>
-							</li>
-							<li class="fragment current-visible">Busqueda de velocidad de cambio sin violar el SLO</li>
-							<li class="fragment current-visible">Monitoreo</li>
-							<li class="fragment current-visible">Respuesta a Emergencias</li>
-							<li class="fragment current-visible">Manejo de Cambios</li>
-							<li class="fragment current-visible">Prevision de demanda y capacidad</li>
-							<li class="fragment current-visible">Aprovisionamiento</li>
-							<li class="fragment current-visible">Efficiencia y Performance</li>
-						</ul>
-					</section>
-					<section>
-						Tenets of SRE:
-						Ensuring a Durable Focus on Engineering
-							Blame-free postmortem culture
-							Ops 50% Eng 50%
-
-						Pursuing Maximum Change Velocity Without Violating a Service’s SLO
-							100% wrong reliability target
-							Error Budget, spend to get velocity
-						Monitoring
-							Health y availability
-							A system that requires a human to read an email and decide whether or not some type of action needs to be taken in response is fundamentally flawed
-							Instead, software should do the interpreting, and humans should be notified only when they need to take action.
-						Emergency Response
-							Mean time to failure (MTTF)
-							Mean time to repair (MTTR)
-
-							Humans add latency
-
-							Recording best practices ahead of time in a playbook produces 3x imporvement in MTTR
-						Change Management
-							Progressive Rollouts
-							Quickly and accurately detecting problems
-							Rollback changes safely
-
-						Demand Forecasting and Capacity Planning
-
-						Provisioning
-
-						Efficiency and Performance
-
-					</section>
-
-				</section>
-
-				<section data-background="url('images/logo_esquina.svg')" data-background-position="right bottom" data-background-repeat="no-repeat">					
-					
-					<section>
-					<img style="float: left" class="no-border"  width="7%" src="images/rombo.svg" />
-					<h3 style="float: left">Principios de Devops</h3>
-					</section>
-				
-					<section>
-						<p>CAMS (DH)</p>
-						<p>Pipeline de Software (CD)</p>
-						<p>Retroalimentación (CD)</p>
-						<p>Aprendizaje Contínuo y Experimentación (CD, DH)</p>
-						<p>Arquitectura de Sistemas (Release It)</p>
-						<p>Ganado vs Mascotas | Servidores fenix vs Copo de nieve</p>
-					</section>
-				</section>
-
-				<section data-background="url('images/logo_esquina.svg')" data-background-position="right bottom" data-background-repeat="no-repeat">
-					
-					<section>
-						<img style="float: left" class="no-border"  width="7%" src="images/rombo.svg" />
-						<h3 style="float: left">Dimensiones del Software y su Administración</h3>
-					</section>
-				
-					<section>						
-						<p>Dimensiones</p>
-						<p>Administración de Codigo </p>
-						<p>Administración de Datos</p>
-						<p>Administración de Configuracion</p>
-						<p>Administración de Infraestructura</p>
-					</section>
-				</section>
-
-				<section data-background="url('images/logo_esquina.svg')" data-background-position="right bottom" data-background-repeat="no-repeat">
-					
-					<section>
-						<img style="float: left" class="no-border"  width="7%" src="images/rombo.svg" />
-						<h3 style="float: left">Integracion Continua y Entrega Continua</h3>
-					</section>
-
-				
-					<section>
-						<p>Integración Contínua </p>
-						<p>Pipeline de Software</p>
-						<p>Manejo del proceso de despliegue</p>						
-					</section>
-				</section>
-
-				<section data-background="url('images/logo_esquina.svg')" data-background-position="right bottom" data-background-repeat="no-repeat">
-					
-					<section>
-						<img style="float: left" class="no-border"  width="7%" src="images/rombo.svg" />
-						<h3 style="float: left">Mejora continua y operación</h3>					
-					</section>
-				
-					<section>
-						<p>Monitoreo</p>
-						<p>Retroalimentación</p>
-						<p>Aprendizaje Contínuo y Experimentación</p>
-						<p>Seguridad Informatica</p>
-					</section>
-					<section>
-						<h3>Monitoreo</h3>						
-					</section>
-					<section>
-						<ul>
-							<li>Alerts</li>
-							<li>Tickets</li>
-							<li>Logging</li>
-						</ul>
-					</section>
-				</section>
-
 				<section data-background="url('images/logo_esquina_intro_end.svg'), linear-gradient(to right, #443548, #b71930, #e94635)" data-background-position="right bottom" data-background-repeat="no-repeat">
 					<h1 class="white-font">End</h1>
 				</section>
