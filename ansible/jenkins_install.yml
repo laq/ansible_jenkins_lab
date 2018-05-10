@@ -27,10 +27,12 @@
     become: yes
     apt: pkg=jenkins state=present
 
-  - name: Install ansible
-    become: yes
-    apt: pkg=ansible state=present
-
   - name: Install pip
     become: yes
     apt: pkg=python-pip state=present
+
+
+  - name: Ensure ansible is installed
+    pip:
+      name: ansible
+      executable: pip
