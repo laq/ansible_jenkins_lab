@@ -24,6 +24,7 @@
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <authToken>q7v0j9sp2a9z756c</authToken>
   <triggers/>
   <concurrentBuild>false</concurrentBuild>
   <builders>
