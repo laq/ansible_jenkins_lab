@@ -25,7 +25,7 @@
         remote_src : yes
 
     - name: Rename folder
-      command: mv /var/www/html/reveal.js-master /var/www/html/master
+      command: mv /var/www/html/ansible_jenkins_lab-master /var/www/html/master
 
     - name: Ensure zip is gone
       file: 
