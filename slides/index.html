@@ -123,7 +123,7 @@
                     </section>
                     <section>
                         <h4>Data as Code</h4>
-                        <p>NPI</p>
+                        <img class="no-border" width="60%" src="images/theory/data-as-code.png" />
                     </section>
                 </section>
 
@@ -191,6 +191,11 @@
                     </section>
 
                     <section>
+                        <h3>Jenkins Pipelines</h3>
+                        <img class="no-border" width="50%" src="images/jenkins/pipelines-plugin.png" />
+                    </section>
+
+                    <section>
                         <h3>Interfaz Web Para Scripts</h3>
                         <p style="font-size: 0.8em;">
                             Ansible puede ser configurable por interfaz por ejemplo
@@ -202,11 +207,10 @@
                         <h3>Algunos problemas</h3>
                         <p style="float: left;font-size: 0.8em;">Versionamiento de lógica
                         <ul style="font-size: 0.7em;">
-                            <li>¿Cómo deberían manejarse los backups?</li>
-                            <li>¿Debería tenerse un repositorio con todos los archivos de Jenkins? 1G?</li>
-                            <li>¿Si tenemos un repositorio con solamente los jobs cómo manejamos la configuración de plugins?</li>
-                            <li>¿En qué medida se ve aumentada la complejidad del sistema cuando tenemos un despliegue en clúster?</li>
-                            <li>Algunos plugins pueden usar bastante memoria RAM</li>
+                            <li class="fragment">¿Cómo deberían manejarse los backups?</li>
+                            <li class="fragment">¿Si tenemos un repositorio con solamente los jobs cómo manejamos la configuración de plugins?</li>
+                            <li class="fragment">¿En qué medida se ve aumentada la complejidad del sistema cuando tenemos un despliegue en clúster?</li>
+                            <li class="fragment">Algunos plugins pueden usar bastante memoria RAM</li>
                         </ul>
                         <!--<img class="no-border" width="100%" src="images/jenkins/ansible-plugin.png" />-->
                         </p>
@@ -227,7 +231,7 @@
                         <p style="font-size: 1.0em;">
                         <ul style="font-size: 0.7em;">
                             <li>Configuración de servidores remotos desde un host central</li>
-                            <li>SSH y Python (no usa agentes)</li>
+                            <li>SSH y Python</li>
                             <li>Definimos playbooks en formato YAML</li>
                         </ul>
                         </p>
@@ -286,50 +290,9 @@
                     <section>
                         <h3>Qué vamos a hacer</h3>
                         <p style="font-size: 1.0em;">
-                        <ul style="font-size: 0.7em;">
-                        <li>Configuración de blah blah blah blah</li>
-                        <li>Más blah blah blah</li>
-                        </ul>
+                            <a href="https://github.com/laq/ansible_jenkins_lab">https://github.com/laq/ansible_jenkins_lab</a>
                         </p>
                         <!--Deberíamos incluir una imagen de lo que esperamos que quede-->
-                    </section>
-
-                    <section>
-                        <h3>Inventarios</h3>
-                        <p style="font-size: 1.0em;">
-                        <ul style="font-size: 0.7em;">
-                        <li>Nos permiten definir hosts sobre los que se ejecutan las tareas</li>
-                        <li>Podemos agrupar esos hosts en grupos</li>
-                        <li>Estáticos o dinámicos (por ejemplo cuando usamos ansible con servidores en la nube)</li>
-                        </ul>
-                        </p>
-                        <img class="no-border" src="images/ansible/ansible-inventories.png" width="60%" />
-                    </section>
-
-                    <section>
-                        <h3>Variables</h3>
-                        <p style="font-size: 1.0em;">
-                        <ul style="font-size: 0.7em;">
-                            <li>Declaradas globalmente</li>
-                            <li>Declaradas por grupo específico</li>
-                            <li>Declaradas por host</li>
-                            <li>Declaradas en playbooks</li>
-                        </ul>
-                        </p>
-                        <img class="no-border" src="images/ansible/ansible-variables.png" width="100%" />
-                    </section>
-
-                    <section>
-                        <h3>Playbooks, Roles y Tasks</h3>
-                        <p style="font-size: 1.0em;">
-                        <ul style="font-size: 0.7em;">
-                        <li>Los playbooks son archivos .yml</li>
-                        <li>Un playbook agrupa un conjunto de tareas</li>
-                        <li>Un playbook define en qué hosts se ejecutan esas tareas</li>
-                        <li>Las tareas pueden estar agrupadas en roles (reusabilidad) </li>
-                        </ul>
-                        </p>
-                        <img class="no-border" src="images/ansible/ansible-play-roles-tasks.png" width="50%" />
                     </section>
 
                 </section>
