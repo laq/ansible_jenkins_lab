@@ -28,8 +28,11 @@
   <triggers/>
   <concurrentBuild>false</concurrentBuild>
   <builders>
+    <hudson.tasks.Shell>
+      <command>sed -i &apos;1d&apos;  ansible/host_vars/10.0.0.5</command>
+    </hudson.tasks.Shell>
     <org.jenkinsci.plugins.ansible.AnsiblePlaybookBuilder plugin="ansible@1.0">
-      <playbook>ansible/deploy_reveal.yaml</playbook>
+      <playbook>ansible/deploy_reveal.yml</playbook>
       <inventory class="org.jenkinsci.plugins.ansible.InventoryContent">
         <content>[server]
 10.0.0.5 ansible_python_interpreter=/usr/bin/python3 ansible_user=vagrant</content>

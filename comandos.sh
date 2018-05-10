@@ -20,7 +20,7 @@ cd ..
 
 cd ansible
 ansible all -i inventory -m ping
-ansible-playbook -i inventory ngnix_install.yaml
+ansible-playbook -i inventory ngnix_install.yml
 xdg-open http://10.0.0.5
 
 ansible-playbook -i inventory jenkins_install.yml
