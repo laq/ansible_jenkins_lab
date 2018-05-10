@@ -40,3 +40,4 @@ xdg-open http://10.0.0.4:8080
 ansible-playbook -i inventory jenkins_job_invoke.yml
 xdg-open http://10.0.0.5/master/demo.html
 
+curl http://10.0.0.4:8080/job/deploy/build?token=q7v0j9sp2a9z756c
