@@ -4,6 +4,8 @@
     jenkins_password: admin
     jenkins_url: http://10.0.0.4:8080
     ansible_python_interpreter: python2
+    server_private_key: ../vagrant/.vagrant/machines/server/virtualbox/private_key
+
   tasks:
 
   - name: Ensure ansible plugin is installed in jenkins
@@ -28,10 +30,27 @@
       url_password: "{{jenkins_password}}"
       
   - name: Restart Jenkins to make the plugin data available
-    service: name=jenkins state=restarted
     become: yes
+    service: name=jenkins state=restarted
 
 
+  - name: Creates .ssh directory for jenkins user
+    become: yes
+    file: 
+      state: directory
+      path: /var/lib/jenkins/.ssh
+      owner: jenkins
+      group: jenkins      
+      mode: 0700
+
+  - name: Ensure Server key is on .ssh/
+    become: yes
+    copy:
+      src: "{{server_private_key}}"
+      dest: /var/lib/jenkins/.ssh/id_rsa
+      owner: jenkins
+      group: jenkins
+      mode: 0400
 
   - name: "Ensure Jenkins is up"
     uri:

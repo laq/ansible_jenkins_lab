@@ -27,22 +27,18 @@
   <triggers/>
   <concurrentBuild>false</concurrentBuild>
   <builders>
-    <hudson.tasks.Shell>
-      <command>echo $(date)
-echo $(w)</command>
-    </hudson.tasks.Shell>
     <org.jenkinsci.plugins.ansible.AnsiblePlaybookBuilder plugin="ansible@1.0">
       <playbook>ansible/deploy_reveal.yaml</playbook>
       <inventory class="org.jenkinsci.plugins.ansible.InventoryContent">
         <content>[server]
-10.0.0.5 ansible_python_interpreter=/usr/bin/python3</content>
+10.0.0.5 ansible_python_interpreter=/usr/bin/python3 ansible_user=vagrant</content>
         <dynamic>false</dynamic>
       </inventory>
       <limit></limit>
       <tags></tags>
       <skippedTags></skippedTags>
       <startAtTask></startAtTask>
-      <credentialsId>818a6ac6-f836-46f6-8250-09da6e88a912</credentialsId>
+      <credentialsId></credentialsId>
       <vaultCredentialsId></vaultCredentialsId>
       <become>false</become>
       <becomeUser></becomeUser>
@@ -50,12 +46,16 @@ echo $(w)</command>
       <sudoUser></sudoUser>
       <forks>5</forks>
       <unbufferedOutput>true</unbufferedOutput>
-      <colorizedOutput>false</colorizedOutput>
+      <colorizedOutput>true</colorizedOutput>
       <disableHostKeyChecking>true</disableHostKeyChecking>
       <additionalParameters>-vvvv</additionalParameters>
       <copyCredentialsInWorkspace>false</copyCredentialsInWorkspace>
     </org.jenkinsci.plugins.ansible.AnsiblePlaybookBuilder>
   </builders>
   <publishers/>
-  <buildWrappers/>
+  <buildWrappers>
+    <hudson.plugins.ansicolor.AnsiColorBuildWrapper plugin="ansicolor@0.5.2">
+      <colorMapName>xterm</colorMapName>
+    </hudson.plugins.ansicolor.AnsiColorBuildWrapper>
+  </buildWrappers>
 </project>
