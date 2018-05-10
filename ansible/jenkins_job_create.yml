@@ -20,9 +20,18 @@
       url_username: "{{jenkins_user}}"
       url_password: "{{jenkins_password}}"
 
+  - name: Ensure ansicolor plugin is installed in jenkins
+    jenkins_plugin:
+      name: ansicolor
+      url: "{{jenkins_url}}"
+      url_username: "{{jenkins_user}}"
+      url_password: "{{jenkins_password}}"
+      
   - name: Restart Jenkins to make the plugin data available
     service: name=jenkins state=restarted
     become: yes
+
+
 
   - name: "Ensure Jenkins is up"
     uri:
@@ -40,6 +49,10 @@
   - name: Ensure lxml is installed
     pip:
       name: lxml
+
+  - name: Write the new ec2 instance host key to known hosts
+    connection: local
+    shell: "ssh-keyscan -H {{ inventory_hostname }} >> ~/.ssh/known_hosts"
 
   - name: Ensure Jenkins job is created    
     jenkins_job:
